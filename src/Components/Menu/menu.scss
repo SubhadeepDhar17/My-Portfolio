@@ -1,0 +1,33 @@
+.navBar {
+    height: 110px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+
+    .logo {
+        margin-left: 80px;
+        margin-right: 50px;
+        margin-top: 40px;
+    }
+
+    .menuBar {
+        margin-right: 80px;
+        margin-top: 40px;
+
+        nav {
+            a {
+                color: #000;
+                margin-right: 28px;
+                text-decoration: none;
+                
+                &:hover {
+                    color: #9d9d9d;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+}
