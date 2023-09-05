@@ -59,10 +59,10 @@
         color: #8b8b8b;
         width: 90vw;
     }
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 676px) {
         h1 {
-            font-size: 5rem;
-            line-height: 5rem;
+            font-size: 3.5rem;
+            line-height: 3rem;
             letter-spacing: 0rem;
         }
     }
@@ -99,10 +99,15 @@
 
 
 .projects {
-    margin: 5rem 2rem;
+    margin: 5rem auto;
     overflow: hidden;
     h1 {
         @include headlines();
+    }
+    @media screen and (max-width: 676px) {
+        h1 {
+            font-size: 3.5rem;
+        }
     }
     hr {
        @include horizontalBar();
