@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import './home.scss';
 import Coding1 from '../../Assets/Images/coding1.jpg';
@@ -10,93 +10,85 @@ import leftArrow from '../../Assets/Images/left.svg';
 import rightArrow from '../../Assets/Images/right.svg';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
+import {useInView} from 'react-intersection-observer';
+import SMHB from '../../Assets/Images/SMHB.png'
 
-const ScrollAnimation = () => {
-    const [scrollAnime, setScrollAnime] = useState();
-    useEffect(() =>  {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                console.log(entry)
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show');
-                }
-            });
-        });
-        const hiddenElements = document.querySelectorAll('.hidden')
-        hiddenElements.forEach((el) => observer.observe(el))
-    }, [])
-}
 
 const Hero = () => {
-    const scrollAnime = ScrollAnimation();
+    const {ref: myRef, inView: scrollAnime} = useInView();
+
     return (
         <>
-            <div className='hero hidden'>
-                <h1>I AM SUBHA. A FRONT END DEVELOPER
-                    & FREELANCER.
+            <div className="hero">
+                <h1 ref={myRef} className={`${scrollAnime ? 'show' : 'hidden'}`}>
+                    I AM SUBHA&nbsp;. A FRONT END DEVELOPER
+                    & UI/UX DESIGNER.
                 </h1>
+            </div>
+            <div className="about">
+                <p className={`${scrollAnime ? 'paraShow' : 'paraHidden'}`}>
+                    I live somewhere where design meets coding. I love creating
+                    my own desig and prototype in Figma and implement them
+                    using HTML, SCSS and TS on React.js.
+                    To know more click <Link to="/">About me</Link>
+                </p>
             </div>
         </>
     )
 }
 
 const Projects = () => {
+    const {ref: myRef, inView: scrollAnime} = useInView();
+
     return (
         <>
             <div className="layout projects">
-                <h1>Projects</h1>
                 <hr />
-                <ul className='flexUL'>
-                    <li>
-                        <h2>Example 01</h2>
-                        <Link to="/work">
-                            <img src={Coding1} alt=''/>
+                <h1>PROJECTS</h1>
+                <hr />
+                <div ref={myRef} className="projectCard">
+                    <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
+                        <Link to="https://polygonscan.com/address/0x41da8c409c94bbbbf4384024f5a89b7a72c42442"
+                        target='_blank'>
+                            <img src={SMHB} alt='' />
                         </Link>
-                    </li>
-                    <li>
-                        <h2>Example 02</h2>
-                        <Link to="/work">
-                            <img src={Art} alt=''/>
-                        </Link>
-                    </li>
-                    <li>
-                        <h2>Example 03</h2>
-                        <Link to="/work">
-                            <img src={Coding2} alt=''/>
-                        </Link>
-                    </li>
-                </ul>
+                    </div>
+                    <div className={`${scrollAnime ? 'paraShow' : 'paraHidden'}`}>
+                        <h1>NFT STARTUP</h1>
+                        <p>Started a Polygon Based ERC 721 Token.
+                            Coded in Solidity and launched in Polygon blockchain
+                            with token ID SMHB.
+                            Made a dapp with React.js coded in Js and styles with CSS
+                        </p>
+                    </div>
+                </div>
             </div>
         </>
     )
 }
 
-const Marketing = () => {
-    return (
-        <>
-            <div className='layout marketing'>
-                <h1>Marketing</h1>
-                <hr />
-                <ul className='flexUL'>
-                    <li>
-                        <h2>Join my YouTube channel where I show my design thinking, 
-                            my process, and my personality. The channel has helped 
-                            over 200K designers become more proficient in the tools 
-                            I use everyday, Figma, Webflow & more. Join the journey!
+const ProjectTwo = () => {
+    const {ref: myRef, inView: scrollAnime} = useInView();
 
-                            <br /><br />
-                            <br /><br />
-                            <Link to="/contact">Contact me for more</Link>&nbsp;⤵︎
-                        </h2>
-                    </li>
-                    <li>
-                        <img src={Coding2} alt='' />
-                    </li>
-                </ul>
+    return (
+        <div className="layout projects">
+        <div ref={myRef} className="projectCard">
+            <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
+                <Link to="https://polygonscan.com/address/0x41da8c409c94bbbbf4384024f5a89b7a72c42442"
+                target='_blank'>
+                    <img src={SMHB} alt='' />
+                </Link>
             </div>
-        </>
+            <div className={`${scrollAnime ? 'paraShow' : 'paraHidden'}`}>
+                <h1>NFT STARTUP</h1>
+                <p>Started a Polygon Based ERC 721 Token.
+                    Coded in Solidity and launched in Polygon blockchain
+                    with token ID SMHB.
+                    Made a dapp with React.js coded in Js and styles with CSS
+                </p>
+            </div>
+        </div>
+        </div>
     )
 }
 
@@ -108,79 +100,74 @@ const Products = () => {
     const [up, setUp] = React.useState(false);
     return (
         <>
-            <div className='layout aboutMe'>
+            <div className='services'>
+                <hr />
                 <h1>About Me</h1>
                 <hr />
-                <ul className='flexUL'>
-                    <li>
-                        <h2>I'm a product designer working on various projects on a 
-                            wide range of clients. My skillset lies on creating branding 
-                            packages & websites to deliver the full online experience 
-                            for new and also veteran businesses. You can often find
-                            me creating videos about design over on YouTube, or 
-                            sharing my thoughts on my podcast, Dialogue With Designers. 
-                            I'm passionate about giving back and teaching what I know 
-                            to the next generation of designers.
-                        </h2>
-                    </li>
-                    <li>
-                        <div className='products'>
-                            <h2>Your one step shop for:</h2>
-                            <ul>
-                                <li>
-                                    <div className="menuTrigger" onClick={() => {
-                                        setClose(!close)
-                                        setDown(!down)}}>
-
-                                                <h2>① Branding/Logo</h2>
-
-                                            <div>
-                                                {down ? 
-                                                    (<img className='upArrow' src={upArrow} alt='' />) :
-                                                    (<img className='downArrow' src={downArrow} alt='' />)
-                                                }
-                                            </div>
-                                    </div> 
-                                    <hr />
-                                    <div className={`dropdownMenu ${close ? 'active' : 'inactive'}`}>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                            Mi sed pulvinar rutrum tempor. Etiam duis massa elementum, 
-                                            etiam cras tristique. Lorem ipsum dolor sit amet, consectetur 
-                                            adipiscing elit. Mi sed pulvinar rutrum tempor. Etiam duis 
-                                            massa elem Starting at € 2,450
-                                        </p>
-                                    </div> 
-                                </li>
-                                <li>
-                                    <div className="menuTrigger" onClick={() => {
-                                        setOpen(!open)
-                                        setUp(!up)}}>
-
-                                            <h2>② Branding/Logo</h2>
-
-                                            <div>
-                                                {up ? 
-                                                    (<img className='upArrow' src={upArrow} alt='' />) :
-                                                    (<img className='downArrow' src={downArrow} alt='' />)
-                                                }
-                                            </div>
-                                    </div> 
-                                    <hr />
-                                    <div className={`dropdownMenu ${open ? 'active' : 'inactive'}`}>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                            Mi sed pulvinar rutrum tempor. Etiam duis massa elementum, 
-                                            etiam cras tristique. Lorem ipsum dolor sit amet, consectetur 
-                                            adipiscing elit. Mi sed pulvinar rutrum tempor. Etiam duis 
-                                            massa elem Starting at € 2,450
-                                        </p>
+                <div className='flexServices'>
+                    <h2>I'm a product designer working on various projects on a 
+                        wide range of clients. My skillset lies on creating branding 
+                        packages & websites to deliver the full online experience 
+                        for new and also veteran businesses. You can often find
+                        me creating videos about design over on YouTube, or 
+                        sharing my thoughts on my podcast, Dialogue With Designers. 
+                        I'm passionate about giving back and teaching what I know 
+                        to the next generation of designers.
+                    </h2>
+                    <div className='dropdown'>
+                        <h2>Your one step shop for:</h2>
+                        <ul>
+                            <li>
+                                <div className="menuTrigger" onClick={() => {
+                                    setClose(!close)
+                                    setDown(!down)}}>
+                                    <h2>① Branding/Logo</h2>
+                                    <div>
+                                        {down ?
+                                            (<img className='upArrow' src={upArrow} alt='' />) :
+                                            (<img className='downArrow' src={downArrow} alt='' />)
+                                        }
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                                </div>
+                                <hr />
+                                <div className={`dropdownMenu ${close ? 'active' : 'inactive'}`}>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                        Mi sed pulvinar rutrum tempor. Etiam duis massa elementum, 
+                                        etiam cras tristique. Lorem ipsum dolor sit amet, consectetur 
+                                        adipiscing elit. Mi sed pulvinar rutrum tempor. Etiam duis 
+                                        massa elem Starting at € 2,450
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="menuTrigger" onClick={() => {
+                                    setOpen(!open)
+                                    setUp(!up)}}>
+
+                                        <h2 className='dropdownHeading'>② Branding/Logo</h2>
+
+                                        <div>
+                                            {up ?
+                                                (<img className='upArrow' src={upArrow} alt='' />) :
+                                                (<img className='downArrow' src={downArrow} alt='' />)
+                                            }
+                                        </div>
+                                </div>
+                                <hr />
+                                <div className={`dropdownMenu ${open ? 'active' : 'inactive'}`}>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Mi sed pulvinar rutrum tempor. Etiam duis massa elementum,
+                                        etiam cras tristique. Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit. Mi sed pulvinar rutrum tempor. Etiam duis
+                                        massa elem Starting at € 2,450
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </>
     )
@@ -345,9 +332,8 @@ const Home = () => {
         <>  
             <Hero />
             <Projects />
-            <Marketing />
+            <ProjectTwo />
             <Products />
-            <MarqueeList />
             <Testimonials />
             <ContactMe />
             <NewsLetter />

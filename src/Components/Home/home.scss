@@ -1,20 +1,25 @@
 //----------------Hero Section ------------------
-.hero {
-    padding: 2rem;
+* {
+    font-family: poppins, sans-serif;
+}
+@mixin gridCenter {
     display: grid;
     place-items: center;
-    h1 {
-        font-family: poppins, sans-serif;
-        font-size: 5rem;
-        line-height: 4.5rem;
-        color: #a0a0a0;
-        width: 100vw;
-    }
+}
+@mixin headlines {
+    font-size: 4rem;
+    color: #8b8b8b;
+    padding: 0;
+    text-align: center;
+}
+@mixin horizontalBar {
+    margin: auto;
+    border: 1px solid #393939;
 }
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transition: all 1s;
+    transition: all 1s ease;
     transform: translateX(-100%);
 }
 
@@ -26,14 +31,234 @@
 .show {
     opacity: 1;
     filter: blur(0);
-    transition: all 1s;
-    transform: translateY(0px);
+    transition: all 1.5s ease;
+    transform: translateX(0%);
 }
+.paraHidden {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s ease;
+    transform: translateX(100%);
+    visibility: hidden;
+}
+.paraShow {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1.5s ease;
+    transform: translateX(0%);
+}
+.hero {
+    padding: 2rem;
+    overflow: hidden;
+    @include gridCenter();
+    h1 {
+        font-size: 10rem;
+        margin: 0rem;
+        line-height: 8rem;
+        letter-spacing: -0.5rem;
+        color: #8b8b8b;
+        width: 90vw;
+    }
+    @media all and (max-width: 1200px) {
+        h1 {
+            font-size: 5rem;
+            line-height: 5rem;
+            letter-spacing: 0rem;
+        }
+    }
+}
+.about {
+    @include gridCenter();
+    p {
+        margin-top: 2.5rem;
+        color: #8b8b8b;
+        font-size: 0.9rem;
+        width: 30vw;
+        text-align: right;
+            &::before {
+                content: " ABOUT - ";
+                color: #cccccc;
+            }
+        a {
+            color: #515151;
+            &:hover {
+                color: #c1c1c1;
+                transition: 0.5s;
+            }
+        }
+    }
+    @media all and (max-width: 1200px) {
+        p {
+            width: 70vw;
+        }
+    }
+}
+
+
 //----------------Hero Section ------------------
 
 
+.projects {
+    margin: 5rem 2rem;
+    overflow: hidden;
+    h1 {
+        @include headlines();
+    }
+    hr {
+       @include horizontalBar();
+    }
+    .projectCard {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 1rem;
+        margin-top: 3rem;
+        img {
+            width: auto;
+            height: 45vh;
+            margin: 1rem auto;
+            box-shadow: 0px 0px 10px #686868;
+            border-radius: 1rem;
+            //filter: grayscale(100%);
+            &:hover {
+                transform: scale(1.05);
+                transition: all 0.2s;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            img {
+                width: 80vw;
+                height: auto;
+                margin-bottom: 3rem;
+            }
+        }
+        h1 {
+            color: #8b8b8b;
+            font-size: 4rem;
+            text-align: center;
+        }
+        p {
+            width: 40vw;
+            text-align: justify;
+            padding: 1rem;
+            margin: auto;
+            color: #878787;
+        }
+        @media all and (max-width: 1200px) {
+            p {
+               width: 80vw;
+            }
+        }
+    }
+}
+@media all and (max-width: 1200px) {
+    .projectCard {
+        flex-direction: column;
+    }
+}
 
+// ----------------------- Projects -------------------- //
 
+.services {
+    margin: 5rem 2rem;
+    h1 {
+        @include headlines();
+    }
+    hr {
+        @include horizontalBar();
+    }
+    .flexServices {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem;
+        margin-top: 3rem;
+        h2 {
+            font-size: 1rem;
+            color: #8b8b8b;
+            padding: 1rem;
+            margin: 0 auto;
+            text-align: justify;
+            width: 90%;
+        }
+        .dropdown {
+            width: 100%;
+            h2 {
+                font-size: 2rem;
+                margin: 1rem;
+                padding: 0;
+            }
+            ul {
+                padding: 0;
+            }
+            li {
+                list-style: none;
+            }
+            .menuTrigger {
+                display: flex;
+                justify-content: space-between;
+                overflow: hidden;
+                cursor: pointer;
+                .downArrow {
+                    margin-top: 30px;
+                    margin-right: 12px;
+                    transform: translateY(10px);
+                    transition: 1s ease;
+                    background-color: #bababa;
+                    padding: 0.5rem;
+                    border-radius: 20px;
+                }
+                .upArrow {
+                    margin-top: 10px;
+                    margin-right: 12px;
+                    transform: translateY(0px);
+                    transition: 1s ease;
+                    background-color: #686868;
+                    filter: blur(0.2rem);
+                    padding: 0.5rem;
+                    border-radius: 20px;
+                }
+                @media screen and (max-width: 676px) {
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                    .downArrow {
+                        margin-top: 20px;
+                    }
+                    .upArrow{
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .dropdownMenu {
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0px);
+                    transition: 0.5s ease;
+                }
+                &.inactive {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(30px);
+                    transition: 0.5s ease ;
+                    margin-top: -70px;
+                    margin-bottom: 20px;
+                    padding: 0px;
+                }
+            }
+
+            p {
+                color: #878787;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+    @media all and (max-width: 1200px) {
+            .flexServices {
+                flex-direction: column;
+            }
+        }
+}
 
 
 /*// Global CSS

@@ -9,28 +9,12 @@ const Try = () => {
     return (
         <>
             <section>
-                <h1>
+                <h1 className="heymom">
                     Hi Mom
                 </h1>
-                <p>This is my website</p>
             </section>
 
-            <section>
-                <h2 className='hidden'>Buy my product</h2>
-                <p>please</p>
-            </section>
-            <section>
-                <h1>
-                    Hi Mom
-                </h1>
-                <p>This is my website</p>
-            </section>
-            <section>
-                <h1>
-                    Hi Mom
-                </h1>
-                <p>This is my website</p>
-            </section>
+            
         </>
     )
 }
