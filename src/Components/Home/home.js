@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import './home.scss';
 import Buildings from '../../Assets/Images/bnwbuilding.jpg';
 import Coding1 from '../../Assets/Images/coding1.jpg';
@@ -10,22 +11,34 @@ import leftArrow from '../../Assets/Images/left.svg';
 import rightArrow from '../../Assets/Images/right.svg';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
+import { useInView } from 'react-intersection-observer';
+
+const ScrollAnimation = () => {
+    const [scrollAnime, setScrollAnime] = useState();
+    useEffect(() =>  {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden')
+        hiddenElements.forEach((el) => observer.observe(el))
+    }, [])
+}
 
 const Hero = () => {
+    const scrollAnime = ScrollAnimation();
     return (
         <>
-            <div className='hero'>
-                <ul className='flexUL'>
-                    <li>
-                        <h1>I'm Subhadeep Dhar, a front-end developer 
-                            & freelancer based in India. <br />
-                            Available for work & collaborations.
-                        </h1>
-                    </li>
-                    <li>
-                        <img src={Buildings} alt=''/>
-                    </li>
-                </ul>
+            <div className='hero hidden'>
+                <h1>I AM SUBHA. A FRONT END DEVELOPER
+                    & FREELANCER.
+                </h1>
             </div>
         </>
     )

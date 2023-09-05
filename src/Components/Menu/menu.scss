@@ -1,4 +1,29 @@
 .navBar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    .logo {
+        margin: 1rem;
+        color: #f1f1f1;
+    }
+    .menuBar {
+        margin: 1rem;
+        a {
+            margin: 0 0.5rem;
+            color: #808080;
+            text-decoration: none;
+            &:hover {
+                color: #f1f1f1;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+
+
+
+/*.navBar {
     height: 110px;
     width: auto;
     display: flex;
@@ -31,3 +56,4 @@
         }
     }
 }
+*/
