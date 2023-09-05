@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import './home.scss';
-import Buildings from '../../Assets/Images/bnwbuilding.jpg';
 import Coding1 from '../../Assets/Images/coding1.jpg';
 import Coding2 from '../../Assets/Images/coding2.jpg';
 import Art from '../../Assets/Images/artshirt.jpg';
@@ -11,7 +10,6 @@ import leftArrow from '../../Assets/Images/left.svg';
 import rightArrow from '../../Assets/Images/right.svg';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
-import { useInView } from 'react-intersection-observer';
 
 const ScrollAnimation = () => {
     const [scrollAnime, setScrollAnime] = useState();
