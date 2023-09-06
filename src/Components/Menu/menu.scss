@@ -3,12 +3,16 @@
     justify-content: space-between;
     font-size: 1.3rem;
     margin: 0 2rem;
+    overflow: hidden;
     .logo {
         margin: 1rem;
         color: #f1f1f1;
     }
     .menuBar {
         margin: 1rem;
+        li {
+            display: inline;
+        }
         a {
             margin: 0 0.5rem;
             color: #808080;
@@ -20,45 +24,76 @@
         }
     }
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 900px) {
     .navBar {
-        margin: 0 1rem;
+        transform: translateX(-200%);
+        position: absolute;
+        visibility: hidden;
+        overflow: hidden;
     }
 }
-
-
-
-/*.navBar {
-    height: 110px;
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    font-family: sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-
-    .logo {
-        margin-left: 80px;
-        margin-right: 50px;
-        margin-top: 40px;
-    }
-
-    .menuBar {
-        margin-right: 80px;
-        margin-top: 40px;
-
-        nav {
-            a {
-                color: #000;
-                margin-right: 28px;
-                text-decoration: none;
-                
-                &:hover {
-                    color: #9d9d9d;
-                    transition: 0.4s;
-                }
-            }
+.mobileMenu {
+    overflow: hidden;
+    ul {
+        padding: 0;
+        margin: 1rem;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        overflow: hidden;
+        .hamburger {
+            font-size: 2rem;
+            color: #808080;
+        }
+        a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1.5rem;
         }
     }
 }
-*/
+.hamburgerMenu {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    list-style: none;
+    background-color: #808080;
+    z-index: 9;
+    li{
+        background-color: #808080;
+        width: 100vw;
+        z-index: 1;
+        margin: 5rem auto;
+    }
+    a {
+        margin: 0rem;
+        font-family: sans-serif;
+        font-weight: 400;
+        color: #f1f1f1;
+        text-decoration: none;
+        background-color: transparent;
+    }
+    &.active {
+        visibility: visible;
+        transform: translateX(0px);
+        transition: 1s ease;
+        opacity: 1;
+        overflow: hidden;
+
+    }
+    &.inactive {
+        visibility: hidden;
+        transform: translateX(-1600px);
+        transition: 1s ease;
+        opacity: 0.3;
+    }
+}
+@media all and (min-width: 900px) {
+    .mobileMenu, .hamburgerMenu {
+        transform: translateX(-200%);
+        position: absolute;
+        overflow: hidden;
+    }
+}

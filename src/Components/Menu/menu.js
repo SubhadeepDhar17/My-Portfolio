@@ -1,7 +1,31 @@
 import {NavLink} from 'react-router-dom';
 import './menu.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const Menu = () => {
+    const [mobileMenu, setMobileMenu] = useState(false);
+
+    const Menu = [
+        {
+            name: 'Home',
+            to: '/',
+        },
+        {
+            name: 'Work',
+            to: '/work',
+        },
+        {
+            name: 'About',
+            to: '/',
+        },
+        {
+            name: 'Contact',
+            to: '/',
+        },
+    ]
+    const MenuMap = Menu.map((list) => <li><NavLink to={list.to}>{list.name}</NavLink></li>);
     return (
         <>
             <div className='navBar'>
@@ -10,23 +34,20 @@ const Menu = () => {
                 </div>
                 <div className='menuBar'>
                     <nav>
-                        <NavLink exact="true" to="/">
-                            Home
-                        </NavLink>
-                        <NavLink exact="true" to="work">
-                            Work
-                        </NavLink>
-                        <NavLink exact="true" to="/">
-                            About
-                        </NavLink>
-                        <NavLink exact="true" to="/">
-                            Contact
-                        </NavLink>
-                        <NavLink exact="true" to="try">
-                            Try
-                        </NavLink>
+                        {MenuMap}
                     </nav>
                 </div>
+            </div>
+            <div className='mobileMenu'>
+                <ul>
+                    <li className='hamburger' onClick={() => setMobileMenu(!mobileMenu)}>
+                        <FontAwesomeIcon icon={faBars} />
+                    </li>
+                    <li><h1><NavLink to='/'>Subha</NavLink></h1></li>
+                </ul>
+            </div>
+            <div className={`hamburgerMenu ${mobileMenu ? 'active' : 'inactive'}`}>
+                {MenuMap}
             </div>
         </>
     )
