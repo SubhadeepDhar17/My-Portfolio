@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import {useInView} from 'react-intersection-observer';
 import SMHB from '../../Assets/Images/SMHB.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const Hero = () => {
@@ -42,9 +44,9 @@ const Projects = () => {
 
     return (
         <>
-            <div className="layout projects">
+            <div className="projects">
                 <hr />
-                <h1>PROJECTS</h1>
+                <h1>Projects</h1>
                 <hr />
                 <div ref={myRef} className="projectCard">
                     <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
@@ -71,7 +73,7 @@ const ProjectTwo = () => {
     const {ref: myRef, inView: scrollAnime} = useInView();
 
     return (
-        <div className="layout projects">
+        <div className="projects">
         <div ref={myRef} className="projectCard">
             <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
                 <Link to="https://polygonscan.com/address/0x41da8c409c94bbbbf4384024f5a89b7a72c42442"
@@ -105,13 +107,13 @@ const Products = () => {
                 <h1>About Me</h1>
                 <hr />
                 <div className='flexServices'>
-                    <h2>I'm a product designer working on various projects on a 
-                        wide range of clients. My skillset lies on creating branding 
-                        packages & websites to deliver the full online experience 
+                    <h2>I'm a product designer working on various projects on a
+                        wide range of clients. My skillset lies on creating branding
+                        packages & websites to deliver the full online experience
                         for new and also veteran businesses. You can often find
-                        me creating videos about design over on YouTube, or 
-                        sharing my thoughts on my podcast, Dialogue With Designers. 
-                        I'm passionate about giving back and teaching what I know 
+                        me creating videos about design over on YouTube, or
+                        sharing my thoughts on my podcast, Dialogue With Designers.
+                        I'm passionate about giving back and teaching what I know
                         to the next generation of designers.
                     </h2>
                     <div className='dropdown'>
@@ -177,15 +179,15 @@ const MarqueeList = () => {
     return (
         <>
             <div className='marquee'>
-                <div className='texts'>
-                    <Marquee speed={60}>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>React JS</span>
-                        <span>Node JS</span>
-                        <span>MySQL</span>
-                    </Marquee>
+                <div>
+                    <span> HTML</span>
+                    <span> CSS</span>
+                    <span> JS</span>
+                    <span> SASS</span>
+                    <span> REACTJS</span>
+                    <span> TS</span>
+                    <span> NODEJS</span>
+                    <span> EXPRESS</span>
                 </div>
             </div>
         </>
@@ -254,19 +256,20 @@ const Testimonials = () => {
       }
     
     return (
-        <div className='layout testimonials'>
-                <h1>Marketing</h1>
-                <hr />
-            <div className='testi'>
-                <div onClick={prevPerson}>
-                    <img className='arrow' src={leftArrow} alt=''/>
+        <div className='testimonials'>
+            <hr />
+            <h1>Testimonials</h1>
+            <hr />
+            <div className='paragraph'>
+                <div onClick={prevPerson} className='arrow'>
+                    <FontAwesomeIcon icon={faArrowCircleLeft} />
                 </div>
                 <div>
                     <p className='text'>{text}</p>
                     <p><i>{name}<br />{job}</i></p>
                 </div>
-                <div  onClick={nextPerson}>
-                    <img className='arrow' src={rightArrow} alt=''/>
+                <div  onClick={nextPerson} className='arrow'>
+                    <FontAwesomeIcon icon={faArrowCircleRight} />
                 </div>
             </div>
         </div>
@@ -276,45 +279,23 @@ const Testimonials = () => {
 const ContactMe = () => {
     return (
         <>
-        <div className='layout contactMe'>
-                <h1>Marketing</h1>
-                <hr />
-                <ul className='flexUL'>
-                    <li>
-                        <h2>Looking to start a new project or just want to say hi? 
-                            Send me an email and I’ll do my best to reply within 
-                            24 hrs!
-                            <br />
-                            <br />
-                            <br />
-                            If contact forms aren’t your thing... 
-                            send me an email at hello@arnau.design
-                        </h2>
-                    </li>
-                    <li>
-                        
-                        <form>
-                            <ul>
-                                <li className='half'>
-                                    <input type='text' name='name' placeholder='Name' required />
-                                </li>
-                                <li className='half'>
-                                    <input type='email' name='email' placeholder='Email' required />
-                                </li>
-                                <li>
-                                    <input type='text' name='subject' placeholder='Subject' />
-                                </li>
-                                <li>
-                                    <textarea placeholder='&nbsp; &nbsp; Message' name='message' required/>
-                                </li>
-                                <li>
-                                    <input type='submit' className='flat-button' value="Send" />
-                                </li>
-                            </ul>
-                        </form>
-                    </li>
+        <div className='contactMe'>
+            <hr />
+            <h1>Contact Me</h1>
+            <hr />
+            <div className='contactCard'>
+                <p>This is a paragraph</p>
+                <ul>
+                    <form>
+                        <li><input type='text' placeholder='Name' required/></li>
+                        <li><input type='email' placeholder='Email' required/></li>
+                        <li><input type='text' placeholder='Subject' required/></li>
+                        <li><textarea placeholder='Message'/></li>
+                        <button>Submit</button>
+                    </form>
                 </ul>
             </div>
+        </div>
         </>
     )
 }
@@ -342,3 +323,21 @@ const Home = () => {
 };
 
 export default Home;
+
+/*<ul>
+                            <li className='half'>
+                                <input type='text' name='name' placeholder='Name' required />
+                            </li>
+                            <li className='half'>
+                                <input type='email' name='email' placeholder='Email' required />
+                            </li>
+                            <li className='full'>
+                                <input type='text' name='subject' placeholder='Subject' />
+                            </li>
+                            <li className='full'>
+                                <textarea placeholder='&nbsp; &nbsp; Message' name='message' required/>
+                            </li>
+                            <li>
+                                <input type='submit' className='flat-button' value="Send" />
+                            </li>
+                        </ul>*/

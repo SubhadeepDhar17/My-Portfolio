@@ -7,7 +7,7 @@
     place-items: center;
 }
 @mixin headlines {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #8b8b8b;
     padding: 0;
     text-align: center;
@@ -47,6 +47,7 @@
     transition: all 1.5s ease;
     transform: translateX(0%);
 }
+//---------------- Hero Section ------------------//
 .hero {
     padding: 2rem;
     overflow: hidden;
@@ -76,6 +77,7 @@
 }
 .about {
     @include gridCenter();
+    overflow: hidden;
     p {
         margin-top: 2.5rem;
         color: #8b8b8b;
@@ -100,11 +102,9 @@
         }
     }
 }
+//---------------- Hero Section ------------------//
 
-
-//----------------Hero Section ------------------
-
-
+//---------------- Projects------------------- //
 .projects {
     margin: 5rem auto;
     overflow: hidden;
@@ -125,6 +125,7 @@
         align-items: center;
         margin: 1rem;
         margin-top: 3rem;
+        margin-bottom: 0;
         img {
             width: auto;
             height: 45vh;
@@ -168,9 +169,9 @@
         flex-direction: column;
     }
 }
-
 // ----------------------- Projects -------------------- //
 
+// ------------------------ Services --------------------//
 .services {
     margin: 5rem 2rem;
     h1 {
@@ -270,6 +271,145 @@
             }
         }
 }
+// ------------------------ Services --------------------//
+
+// ------------------------ Marquee --------------------//
+/*.marquee {
+    div {
+        font-size: 4rem;
+        display: block;
+        height: 6rem;
+        color: #878787;
+        overflow: hidden;
+        letter-spacing: 0px;
+        animation: scrollLeft 5s linear infinite;
+    }
+    @keyframes scrollLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}*/
+//---------------- Testimonials ----------------- //
+.testimonials {
+    margin: 1rem;
+    h1 {
+        @include headlines();
+        font-size: 3rem
+    }
+    hr {
+        @include horizontalBar();
+    }
+    .paragraph {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 5rem;
+        margin-top: 3rem;
+
+        .arrow {
+            margin-top: 8rem;
+            cursor: pointer;
+            font-size: 4rem;
+            color: #515151;
+
+            &:active {
+                color: #8b8b8b;
+            }
+        }
+
+        p {
+            margin: 20px;
+            width: 600px;
+            font-size: 30px;
+            text-align: center;
+            color: #8b8b8b;
+            text-align: justify;
+        }
+
+        i {
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .paragraph {
+            flex-wrap: nowrap;
+            margin: 1rem;
+            .arrow {
+                font-size: 2rem;
+                margin-top: 5rem;
+            }
+
+            p {
+                width: auto;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+//---------------- Testimonials ----------------- //
+
+//---------------- Contact Me ----------------- //
+.contactMe {
+    h1 {
+        @include headlines();
+    }
+    hr {
+        @include horizontalBar();
+    }
+    margin: 1rem;
+    .contactCard {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-evenly;
+        form {
+            li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                margin: 1rem auto;
+                width: 20rem;
+                &:first-child {
+                    margin-top: 0;
+                }
+                input, textarea {
+                    width: 100%;
+                    border: 1px solid #878787;
+                    border-radius: 12px;
+                    padding: 1rem;
+                    color: #8b8b8b;
+                }
+            }
+            button {
+                width: 6rem;
+                padding: 0.5rem;
+                border: 1px solid #878787;
+                color: #8b8b8b;
+                font-size: 1rem;
+                border-radius: 25px;
+                background: linear-gradient(to right, rgb(190, 73, 0) 50%, transparent 50%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all .5s ease-out;
+                &:hover {
+                    background-position:  left bottom;
+                    color: white;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .contactCard {
+            flex-direction: column;
+        }
+    }
+}
 
 
 /*// Global CSS
@@ -324,259 +464,6 @@ a {
     color: #000;
 }
 //Global CSS ends here
-
-.hero {
-    ul {
-        margin-top: 70px;
-
-        li {
-            h1 {
-                margin: 1px;
-                font-family: sans-serif;
-                width: 800px;
-                font-size: 4rem;
-                font-weight: 350;
-                color: #282828;
-                word-spacing: 5px;
-                position: absolute;
-                margin-top: 50px;
-            }
-            @media only screen and (max-width: 1300px){
-                h1 {
-                    width: auto;
-                    position: static;
-                }
-            }
-
-            img {
-                width: 606px;
-                height: auto;
-            }
-            @media only screen and (max-width: 1300px) {
-                img {
-                    max-width: 100%;
-                }
-            }
-        }
-        @media only screen and (max-width: 1300px){
-            li {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-    }
-}
-
-
-.projects {
-    ul {
-        li {
-            h2 {
-                margin-top: 102px;
-                margin-bottom: 18px;
-                font-family: sans-serif;
-                font-weight: 400;
-                font-size: 30px;
-                padding: 0px 1px;
-            }
-            img {
-                width: 370px;
-                height: 558px;
-                border-radius: 5px;
-                padding: 0px 1px;
-            }
-        }
-    }
-    
-}
-
-.marketing {
-    ul {
-        li {
-            h2 {
-                width: 514px;
-                margin-top: 86px;
-                margin-bottom: 18px;
-                margin-right: 90px;
-                font-family: sans-serif;
-                font-weight: 400;
-                font-size: 25px;
-                padding: 0px 1px;
-            }
-            @media only screen and (max-width: 1300px){
-                h2 {
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-            img {
-                width: 600px;
-                height: 376px;
-                border-radius: 5px;
-                margin-top: 86px;
-                padding: 0px 1px;
-            }
-            @media only screen and (max-width: 1300px) {
-                img {
-                    max-width: 100%;
-                }
-            }
-        }
-    }
-    
-}
-
-.aboutMe {
-    ul {
-        li {
-            h2 {
-                width: 514px;
-                margin-top: 86px;
-                margin-bottom: 18px;
-                margin-right: 90px;
-                font-family: sans-serif;
-                font-weight: 400;
-                font-size: 25px;
-                padding: 0px 1px;
-            }
-            @media only screen and (max-width: 1300px){
-                h2 {
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-            .menuTrigger {
-                overflow: hidden;
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-            }
-            .dropdownMenu.active {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0px);
-                transition: 0.5s ease;
-              }
-              
-            .dropdownMenu.inactive {
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(40px);
-                transition: 0.5s ease ;
-                margin-top: -70px;
-                margin-bottom: 20px;
-                padding: 0px;
-            }
-
-            .downArrow {
-                margin-top: 20px;
-                margin-right: 12px;
-                transform: translateY(10px);
-                transition: 1s ease;
-            }
-            .upArrow {
-                margin-top: 10px;
-                margin-right: 12px;
-                transform: translateY(0px);
-                transition: 1s ease;
-            }
-
-            .products {
-
-                h2 {
-                    font-size: 25px;
-                    padding: 0;
-                    margin: 0px;
-                    margin-top: 86px;
-                }
-
-                ul {
-                    list-style: none;
-                    padding: 0px;
-
-                    h2 {
-                        margin-top: 14px;
-                    }
-
-                    hr {
-                        width: auto;
-                        margin: 0px;
-                    }
-                }
-            }
-            @media only screen and (max-width: 1300px){
-                .products {
-                    margin-left: 12px;
-                    margin-right: 12px;
-                }
-            }
-        }
-    }
-}
-
-.marquee {
-    width: 100%;
-    padding-top: 3rem;
-
-    div {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-        span {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-    }
-}
-
-.testimonials {
-
-    .testi {
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-        margin: 0;
-        padding: 0px;
-        margin: 164px 120px 0px 120px;
-
-        .arrow {
-            margin-top: 80px;
-            cursor: pointer;
-
-            &:hover {
-                color: aqua;
-                fill: #000;
-            }
-        }
-
-        p {
-            margin: 20px;
-            width: 600px;
-            font-size: 30px;
-            text-align: center;
-        }
-
-        i {
-            font-size: 20px;
-            margin-bottom: 0px;
-        }
-    }
-
-    @media only screen and (max-width: 1300px) {
-        .testi {
-            flex-wrap: nowrap;
-            margin: 100px 20px 0px 20px;
-
-            p {
-                width: auto;
-            }
-        }
-    }
-  
-}
 
 .contactMe {
     ul {

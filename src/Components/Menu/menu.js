@@ -40,13 +40,15 @@ const Menu = () => {
             </div>
             <div className='mobileMenu'>
                 <ul>
-                    <li className='hamburger' onClick={() => setMobileMenu(!mobileMenu)}>
+                    <li onClick={() => setMobileMenu(!mobileMenu)}
+                        className={`hamburger ${mobileMenu ? 'vertical' : 'horizontal'}`} >
                         <FontAwesomeIcon icon={faBars} />
                     </li>
                     <li><h1><NavLink to='/'>Subha</NavLink></h1></li>
                 </ul>
             </div>
-            <div className={`hamburgerMenu ${mobileMenu ? 'active' : 'inactive'}`}>
+            <div className={`hamburgerMenu ${mobileMenu ? 'active' : 'inactive'}`}
+                onClick={() => setMobileMenu(!mobileMenu)}>
                 {MenuMap}
             </div>
         </>
