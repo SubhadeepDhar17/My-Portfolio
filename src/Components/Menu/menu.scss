@@ -7,6 +7,11 @@
     .logo {
         margin: 1rem;
         color: #f1f1f1;
+        &:hover{
+            cursor: pointer;
+            color: #808080;
+            transition: 0.5s;
+        }
     }
     .menuBar {
         margin: 1rem;
@@ -54,10 +59,16 @@
                 color: #f1f1f1;
             }
         }
-        a {
+        h1 {
             color: #f1f1f1;
             text-decoration: none;
             font-size: 1.5rem;
+            overflow: hidden;
+            &:hover{
+                cursor: pointer;
+                color: #808080;
+                transition: 0.5s;
+            }
         }
     }
 }
@@ -104,5 +115,39 @@
         transform: translateX(-200%);
         position: absolute;
         overflow: hidden;
+    }
+}
+.subhaMenu {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    background-color: #373737;
+    text-align: center;
+    li {
+        background-color: transparent;
+        margin: 3rem auto;
+        list-style: none;
+        padding: 0;
+    }
+    a {
+        background-color: transparent;
+        color: #f1f1f1;
+        font-size: 2rem;
+    }
+    &.myMenuActive {
+        visibility: visible;
+        transform: translateY(0px);
+        transition: 1s ease;
+        opacity: 1;
+        overflow: hidden;
+    }
+    &.myMenuInactive {
+        visibility: hidden;
+        transform: translateY(-1000px);
+        transition: 1s ease;
+        opacity: 0.3;
     }
 }
