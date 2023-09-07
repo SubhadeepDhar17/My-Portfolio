@@ -51,6 +51,7 @@
             &.vertical {
                 transform: rotate(90deg);
                 transition: 0.5s ease;
+                color: #f1f1f1;
             }
         }
         a {
@@ -68,12 +69,12 @@
     min-height: 100%;
     text-align: center;
     list-style: none;
-    background-color: #5e5e5e;
+    background-color: #373737;
     z-index: 9;
     li{
         background-color: transparent;
         z-index: 1;
-        margin: 5rem auto;
+        margin: 3rem auto;
     }
     a {
         margin: 0rem;

@@ -1,15 +1,8 @@
-import React, { useRef } from 'react';
-import { useState, useEffect } from 'react';
+import React from 'react';
 import './home.scss';
-import Coding1 from '../../Assets/Images/coding1.jpg';
-import Coding2 from '../../Assets/Images/coding2.jpg';
-import Art from '../../Assets/Images/artshirt.jpg';
 import downArrow from '../../Assets/Images/Down.svg'
 import upArrow from '../../Assets/Images/Up.svg';
-import leftArrow from '../../Assets/Images/left.svg';
-import rightArrow from '../../Assets/Images/right.svg';
 import { Link } from 'react-router-dom';
-import Marquee from 'react-fast-marquee';
 import {useInView} from 'react-intersection-observer';
 import SMHB from '../../Assets/Images/SMHB.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -175,25 +168,6 @@ const Products = () => {
     )
 }
 
-const MarqueeList = () => {
-    return (
-        <>
-            <div className='marquee'>
-                <div>
-                    <span> HTML</span>
-                    <span> CSS</span>
-                    <span> JS</span>
-                    <span> SASS</span>
-                    <span> REACTJS</span>
-                    <span> TS</span>
-                    <span> NODEJS</span>
-                    <span> EXPRESS</span>
-                </div>
-            </div>
-        </>
-    )
-}
-
 const Testimonials = () => {
 
     const reviews = [
@@ -284,14 +258,18 @@ const ContactMe = () => {
             <h1>Contact Me</h1>
             <hr />
             <div className='contactCard'>
-                <p>This is a paragraph</p>
+                <p>I'm baby meggings twee health goth +1. Bicycle rights tumeric 
+                    chartreuse before they sold out chambray pop-up. Shaman humblebrag 
+                    pickled coloring book salvia hoodie, 
+                    cold-pressed four dollar toast everyday carry
+                </p>
                 <ul>
                     <form>
                         <li><input type='text' placeholder='Name' required/></li>
                         <li><input type='email' placeholder='Email' required/></li>
                         <li><input type='text' placeholder='Subject' required/></li>
                         <li><textarea placeholder='Message'/></li>
-                        <button>Submit</button>
+                        <li><input type='submit' className='button'/></li>
                     </form>
                 </ul>
             </div>
@@ -323,21 +301,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*<ul>
-                            <li className='half'>
-                                <input type='text' name='name' placeholder='Name' required />
-                            </li>
-                            <li className='half'>
-                                <input type='email' name='email' placeholder='Email' required />
-                            </li>
-                            <li className='full'>
-                                <input type='text' name='subject' placeholder='Subject' />
-                            </li>
-                            <li className='full'>
-                                <textarea placeholder='&nbsp; &nbsp; Message' name='message' required/>
-                            </li>
-                            <li>
-                                <input type='submit' className='flat-button' value="Send" />
-                            </li>
-                        </ul>*/

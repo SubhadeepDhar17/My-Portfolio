@@ -111,13 +111,14 @@
     h1 {
         @include headlines();
     }
+    hr {
+        @include horizontalBar();
+        margin: auto 1rem;
+    }
     @media screen and (max-width: 676px) {
         h1 {
             font-size: 3.5rem;
         }
-    }
-    hr {
-       @include horizontalBar();
     }
     .projectCard {
         display: flex;
@@ -368,7 +369,20 @@
         margin-top: 3rem;
         display: flex;
         justify-content: space-evenly;
+        margin-bottom: 3rem;
+        p {
+            width: 50%;
+            margin: 0 2rem 3rem;
+            text-align: justify;
+            color: #8b8b8b;
+            font-size: 1rem;
+        }
+        ul {
+            width: 50%;
+            padding: 0;
+        }
         form {
+            margin: auto;
             li {
                 padding: 0;
                 margin: 0;
@@ -385,18 +399,25 @@
                     padding: 1rem;
                     color: #8b8b8b;
                 }
+                @media screen and (max-width: 700px) {
+                    input, textarea {
+                        width: 60vw;
+                    }
+
+                }
             }
-            button {
+            .button {
                 width: 6rem;
                 padding: 0.5rem;
                 border: 1px solid #878787;
                 color: #8b8b8b;
                 font-size: 1rem;
                 border-radius: 25px;
-                background: linear-gradient(to right, rgb(190, 73, 0) 50%, transparent 50%);
+                background: linear-gradient(to right, #a33600 50%, transparent 50%);
                 background-size: 200% 100%;
                 background-position: right bottom;
                 transition: all .5s ease-out;
+                cursor: pointer;
                 &:hover {
                     background-position:  left bottom;
                     color: white;
@@ -407,151 +428,13 @@
     @media screen and (max-width: 1200px) {
         .contactCard {
             flex-direction: column;
-        }
-    }
-}
-
-
-/*// Global CSS
-.flexUL {
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-        margin: 0;
-        padding: 0px;
-        margin-left: 120px;
-        margin-right: 120px;
-}
-@media only screen and (max-width: 1300px) {
-    .flexUL {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.layout {
-    margin-top: 184px;
-    font-family: sans-serif;
-
-    h1 {
-        width: 586px;
-        margin-left: 120px;
-        padding: 0px;
-        font-size: 45px;
-        font-weight: 400;
-        margin-bottom: 27px;
-    }
-
-    hr {
-        margin-left: 115px;
-        margin-right: 115px;
-        border: 1px solid;
-    }
-
-    ul {
-
-        li {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-}
-
-a {
-    color: #000;
-}
-//Global CSS ends here
-
-.contactMe {
-    ul {
-        li {
-            h2 {
-                width: 514px;
-                margin-top: 86px;
-                margin-bottom: 18px;
-                margin-right: 90px;
-                font-family: sans-serif;
-                font-weight: 400;
-                font-size: 25px;
-                padding: 0px 1px;
+            p {
+                width: 90%;
+                margin: 0rem auto 3rem;
             }
-            @media only screen and (max-width: 1300px){
-                h2 {
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-            }
-
             ul {
-                padding: 0;
-                margin: 0;
-                margin-top: 86px;
-        
-                li {
-                    width: 100%;
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
-                    margin-bottom: 10px;
-                }
-        
-                li.half {
-                    width: 49%;
-                    margin-left: 2%;
-                    float: left;
-        
-                    &:first-child {
-                        margin-left: 0px;
-                    }
-                }
-            }
-        
-            input[type='text'],
-            input[type='email'] {
                 width: 100%;
-                border: 0;
-                background: #f5f5f5;
-                border: 1px solid #000;
-                height: 50px;
-                font-size: 16px;
-                padding: 0 20px;
-                box-sizing: border-box;
             }
-        
-            textarea {
-                width: 100%;
-                border: 0;
-                background: #f5f5f5;
-                border: 1px solid #000;
-                height: 50px;
-                font-size: 16px;
-                min-height: 150px;
-                box-sizing: border-box;
-            }
-        
-            .flat-button {
-                color: #000;
-                background: transparent;
-                font-size: 13px;
-                letter-spacing: 3px;
-                text-decoration: none;
-                padding: 8px 10px;
-                border: 1px solid#000;
-                float: left;
-                border-radius: 4px;
-
-                &:hover {
-                    color: #f5f5f5;
-                    background-color: #000;
-                    cursor: pointer;
-                    transition: 0.5s ease;
-                }
-            }
-        }
-        
         }
     }
-*/
+}

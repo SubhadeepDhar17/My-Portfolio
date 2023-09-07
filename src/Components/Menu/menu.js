@@ -3,6 +3,7 @@ import './menu.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHamburger } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Menu = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
