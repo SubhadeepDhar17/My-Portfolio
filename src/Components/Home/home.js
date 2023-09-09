@@ -5,6 +5,7 @@ import upArrow from '../../Assets/Images/Up.svg';
 import { Link } from 'react-router-dom';
 import {useInView} from 'react-intersection-observer';
 import SMHB from '../../Assets/Images/SMHB.png'
+import Netflix from '../../Assets/Images/NetflixClone.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,9 +23,10 @@ const Hero = () => {
             </div>
             <div className="about">
                 <p className={`${scrollAnime ? 'paraShow' : 'paraHidden'}`}>
-                    I live somewhere where design meets coding. I love creating
-                    my own desig and prototype in Figma and implement them
-                    using HTML, SCSS and TS on React.js.
+                    I live  where design meets coding. I love creating
+                    my own desing and prototype in Figma and implement them
+                    using HTML, SCSS, Tailwind and JS on React.js. User experince
+                    and proper aesthetics are my top priority.
                     To know more click <Link to="/">About me</Link>
                 </p>
             </div>
@@ -71,15 +73,13 @@ const ProjectTwo = () => {
             <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
                 <Link to="https://polygonscan.com/address/0x41da8c409c94bbbbf4384024f5a89b7a72c42442"
                 target='_blank'>
-                    <img src={SMHB} alt='' />
+                    <img src={Netflix} alt='' />
                 </Link>
             </div>
             <div className={`${scrollAnime ? 'paraShow' : 'paraHidden'}`}>
-                <h1>NFT STARTUP</h1>
-                <p>Started a Polygon Based ERC 721 Token.
-                    Coded in Solidity and launched in Polygon blockchain
-                    with token ID SMHB.
-                    Made a dapp with React.js coded in Js and styles with CSS
+                <h1>NETFLIX Clone</h1>
+                <p>Designed a full stack Netflix clone website. Users can login, bookmark movies.
+                    Build using React.js, Fireship and Tailwind CSS.
                 </p>
             </div>
         </div>
@@ -100,14 +100,14 @@ const Products = () => {
                 <h1>About Me</h1>
                 <hr />
                 <div className='flexServices'>
-                    <h2>I'm a product designer working on various projects on a
-                        wide range of clients. My skillset lies on creating branding
-                        packages & websites to deliver the full online experience
-                        for new and also veteran businesses. You can often find
-                        me creating videos about design over on YouTube, or
-                        sharing my thoughts on my podcast, Dialogue With Designers.
-                        I'm passionate about giving back and teaching what I know
-                        to the next generation of designers.
+                    <h2>I am a Fronted Developer and hobby UI/UX designer. I have 
+                        previous work experince in Wordpress development, Search Engine
+                        Optimization and Web3.0 Smart Contract. My first dive in entrepreneurial
+                        skill was launching my wordpress blog balconyvine. I have achieved 470K
+                        impressions on that blog within a year and an average position of 5.7.
+                        I also have experience in dropshipping and e-commerce sales. In frontend 
+                        I am fluent in React.js, Tailwind CSS, SASS/SCSS, CSS3, JS and TS. I am
+                        currently learning Node.js to expand my knowledge and understanding of Web Dev.
                     </h2>
                     <div className='dropdown'>
                         <h2>Your one step shop for:</h2>
@@ -116,7 +116,7 @@ const Products = () => {
                                 <div className="menuTrigger" onClick={() => {
                                     setClose(!close)
                                     setDown(!down)}}>
-                                    <h2>① Branding/Logo</h2>
+                                    <h2>① Web development</h2>
                                     <div>
                                         {down ?
                                             (<img className='upArrow' src={upArrow} alt='' />) :
@@ -127,11 +127,11 @@ const Products = () => {
                                 <hr />
                                 <div className={`dropdownMenu ${close ? 'active' : 'inactive'}`}>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Mi sed pulvinar rutrum tempor. Etiam duis massa elementum, 
-                                        etiam cras tristique. Lorem ipsum dolor sit amet, consectetur 
-                                        adipiscing elit. Mi sed pulvinar rutrum tempor. Etiam duis 
-                                        massa elem Starting at € 2,450
+                                        I have extensive and work-applied knowledge of React.js.
+                                        You can checkout my Github for my projects designed using React, 
+                                        TS, JS and styled with Tailwind CSS, SASS/SCSS and even CSS3.
+                                        I am highly moved my aesthetics and proper UX, all my sites are
+                                        SEO optimised for the best results. 
                                     </p>
                                 </div>
                             </li>
@@ -140,7 +140,7 @@ const Products = () => {
                                     setOpen(!open)
                                     setUp(!up)}}>
 
-                                        <h2 className='dropdownHeading'>② Branding/Logo</h2>
+                                        <h2 className='dropdownHeading'>② Marketing</h2>
 
                                         <div>
                                             {up ?
@@ -173,31 +173,23 @@ const Testimonials = () => {
     const reviews = [
         {
           id: 1,
-          name: 'susan smith',
-          job: 'web developer',
-          text:
-            "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+          name: 'Samantak Saha',
+          job: 'Owner - Solaris',
+          text: "He is a very sincere and hardworking person who delivered according to his promise and got us good results from collaboration with...",
         },
         {
           id: 2,
-          name: 'anna johnson',
-          job: 'web designer',
+          name: 'Pytha',
+          job: 'Owner - SushiPals',
           text:
-            'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+            'Subha is very hardworking and independent thinker. He knows what works best in his field of work and that iss what seperates him from the rest.',
         },
         {
           id: 3,
-          name: 'peter jones',
-          job: 'intern',
+          name: 'Tabita Lori',
+          job: 'Owner - ART Speaks',
           text:
-            'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
-        },
-        {
-          id: 4,
-          name: 'bill anderson',
-          job: 'the boss',
-          text:
-            'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
+            'He is an amazing person to work with. He helped us build our brand from scartch till successful launch.',
         },
       ];
       
@@ -258,10 +250,10 @@ const ContactMe = () => {
             <h1>Contact Me</h1>
             <hr />
             <div className='contactCard'>
-                <p>I'm baby meggings twee health goth +1. Bicycle rights tumeric 
-                    chartreuse before they sold out chambray pop-up. Shaman humblebrag 
-                    pickled coloring book salvia hoodie, 
-                    cold-pressed four dollar toast everyday carry
+                <p>
+                    If you are looking for collaboration, web development or 
+                    just want to say Hi, please send a message through the contact
+                    form. 
                 </p>
                 <ul>
                     <form>

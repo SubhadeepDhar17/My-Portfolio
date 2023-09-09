@@ -128,7 +128,7 @@
         margin-top: 3rem;
         margin-bottom: 0;
         img {
-            width: auto;
+            width: 45vw;
             height: 45vh;
             margin: 1rem auto;
             box-shadow: 0px 0px 10px #686868;
@@ -191,6 +191,7 @@
             color: #8b8b8b;
             padding: 1rem;
             margin: 0 auto;
+            margin-right: 1rem;
             text-align: justify;
             width: 90%;
         }
@@ -269,6 +270,9 @@
     @media all and (max-width: 1200px) {
             .flexServices {
                 flex-direction: column;
+                h2 {
+                    margin-right: auto;
+                }
             }
         }
 }
