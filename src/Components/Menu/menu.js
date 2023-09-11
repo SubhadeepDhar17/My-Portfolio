@@ -1,4 +1,4 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import './menu.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -15,19 +15,19 @@ const Menu = () => {
             to: '/',
         },
         {
-            name: 'Work',
-            to: '/work',
+            name: 'Projects',
+            to: '#projects',
         },
         {
             name: 'About',
-            to: '/',
+            to: '#about',
         },
         {
             name: 'Contact',
-            to: '/',
+            to: '#contact',
         },
     ]
-    const MenuMap = Menu.map((list) => <li><NavLink to={list.to}>{list.name}</NavLink></li>);
+    const MenuMap = Menu.map((list) => <li><a href={list.to} smooth>{list.name}</a></li>);
 
     const MyMenu = [
         {

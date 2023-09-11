@@ -39,7 +39,7 @@ const Projects = () => {
 
     return (
         <>
-            <div className="projects">
+            <div className="projects" id='projects'>
                 <hr />
                 <h1>Projects</h1>
                 <hr />
@@ -71,7 +71,7 @@ const ProjectTwo = () => {
         <div className="projects">
         <div ref={myRef} className="projectCard">
             <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
-                <Link to="https://polygonscan.com/address/0x41da8c409c94bbbbf4384024f5a89b7a72c42442"
+                <Link to="https://netflixclonesubha.netlify.app"
                 target='_blank'>
                     <img src={Netflix} alt='' />
                 </Link>
@@ -95,7 +95,7 @@ const Products = () => {
     const [up, setUp] = React.useState(false);
     return (
         <>
-            <div className='services'>
+            <div className='services' id='about'>
                 <hr />
                 <h1>About Me</h1>
                 <hr />
@@ -245,7 +245,7 @@ const Testimonials = () => {
 const ContactMe = () => {
     return (
         <>
-        <div className='contactMe'>
+        <div className='contactMe' id='contact'>
             <hr />
             <h1>Contact Me</h1>
             <hr />
