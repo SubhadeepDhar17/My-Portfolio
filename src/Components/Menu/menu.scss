@@ -49,6 +49,9 @@
         .hamburger {
             font-size: 2rem;
             color: #808080;
+            &:hover {
+                cursor: pointer;
+            }
             &.horizontal {
                 transform: rotate(0deg);
                 transition: 0.5s ease;
@@ -88,7 +91,7 @@
         margin: 3rem auto;
     }
     a {
-        margin: 0rem;
+        margin: 2.5rem;
         font-family: sans-serif;
         font-weight: 400;
         color: #f1f1f1;

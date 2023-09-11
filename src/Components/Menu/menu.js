@@ -78,7 +78,7 @@ const Menu = () => {
             </div>
             <div className={`hamburgerMenu ${mobileMenu ? 'active' : 'inactive'}`}
                 onClick={() => setMobileMenu(!mobileMenu)}>
-                {MenuMap}
+                <Link to='/'>Home</Link>{MenuMap}
             </div>
         </>
     )
