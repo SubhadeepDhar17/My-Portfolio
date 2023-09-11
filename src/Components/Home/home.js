@@ -27,7 +27,7 @@ const Hero = () => {
                     my own desing and prototype in Figma and implement them
                     using HTML, SCSS, Tailwind and JS on React.js. User experince
                     and proper aesthetics are my top priority.
-                    To know more click <Link to="/">About me</Link>
+                    To know more click <a href='#about'>About me</a>
                 </p>
             </div>
         </>
@@ -41,7 +41,7 @@ const Projects = () => {
         <>
             <div className="projects" id='projects'>
                 <hr />
-                <h1>Projects</h1>
+                <h1 className='title'>Projects</h1>
                 <hr />
                 <div ref={myRef} className="projectCard">
                     <div className={`${scrollAnime ? 'show' : 'hidden'}`}>
@@ -97,7 +97,7 @@ const Products = () => {
         <>
             <div className='services' id='about'>
                 <hr />
-                <h1>About Me</h1>
+                <h1 className='title'>About Me</h1>
                 <hr />
                 <div className='flexServices'>
                     <h2>I am a Fronted Developer and hobby UI/UX designer. I have 
@@ -224,7 +224,7 @@ const Testimonials = () => {
     return (
         <div className='testimonials'>
             <hr />
-            <h1>Testimonials</h1>
+            <h1 className='title'>Testimonials</h1>
             <hr />
             <div className='paragraph'>
                 <div onClick={prevPerson} className='arrow'>
@@ -247,7 +247,7 @@ const ContactMe = () => {
         <>
         <div className='contactMe' id='contact'>
             <hr />
-            <h1>Contact Me</h1>
+            <h1 className='title'>Contact Me</h1>
             <hr />
             <div className='contactCard'>
                 <p>

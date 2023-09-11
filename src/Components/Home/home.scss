@@ -1,7 +1,5 @@
 //----------------Hero Section ------------------
-* {
-    font-family: poppins, sans-serif;
-}
+
 @mixin gridCenter {
     display: grid;
     place-items: center;
@@ -9,7 +7,7 @@
 @mixin headlines {
     font-size: 3rem;
     color: #8b8b8b;
-    padding: 0;
+    padding: 1.5rem;
     text-align: center;
 }
 @mixin horizontalBar {
@@ -127,13 +125,15 @@
         margin: 1rem;
         margin-top: 3rem;
         margin-bottom: 0;
+        font-weight: 400;
         img {
             width: 45vw;
             height: 45vh;
             margin: 1rem auto;
             box-shadow: 0px 0px 10px #686868;
             &:hover {
-                opacity: 0.3;
+                transform: scale(1.05);
+                opacity: 0.7;
                 transition: all 0.2s;
             }
         }
@@ -192,6 +192,7 @@
             margin-right: 1rem;
             text-align: justify;
             width: 90%;
+            font-weight: 400;
         }
         .dropdown {
             width: 100%;
@@ -262,6 +263,7 @@
             p {
                 color: #878787;
                 margin-top: 0.5rem;
+                font-weight: 400;
             }
         }
     }
@@ -276,26 +278,7 @@
 }
 // ------------------------ Services --------------------//
 
-// ------------------------ Marquee --------------------//
-/*.marquee {
-    div {
-        font-size: 4rem;
-        display: block;
-        height: 6rem;
-        color: #878787;
-        overflow: hidden;
-        letter-spacing: 0px;
-        animation: scrollLeft 5s linear infinite;
-    }
-    @keyframes scrollLeft {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(100%);
-        }
-    }
-}*/
+
 //---------------- Testimonials ----------------- //
 .testimonials {
     margin: 1rem;
@@ -313,6 +296,7 @@
         padding: 0;
         margin: 5rem;
         margin-top: 3rem;
+        font-weight: 400;
 
         .arrow {
             margin-top: 8rem;
@@ -332,6 +316,7 @@
             text-align: center;
             color: #8b8b8b;
             text-align: justify;
+            font-weight: 400;
         }
 
         i {

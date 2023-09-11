@@ -11,10 +11,6 @@ const Menu = () => {
 
     const Menu = [
         {
-            name: 'Home',
-            to: '/',
-        },
-        {
             name: 'Projects',
             to: '#projects',
         },
@@ -59,7 +55,7 @@ const Menu = () => {
                 </div>
                 <div className='menuBar'>
                     <nav>
-                        {MenuMap}
+                        <Link to='/'>Home</Link>{MenuMap}
                     </nav>
                 </div>
             </div>
